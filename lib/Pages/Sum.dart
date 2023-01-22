@@ -12,9 +12,8 @@ class _Day2State extends State<Day2> {
   TextEditingController t2 = TextEditingController();
 
   int sum = 0;
-  String str1 = "";
-  String str2 = "";
-  int sum1 = 0;
+  int a = 0;
+  int b = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,7 @@ class _Day2State extends State<Day2> {
           padding: const EdgeInsets.all(30.0),
           child: Card(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(80),
+              borderRadius: BorderRadius.circular(0),
             ),
             borderOnForeground: false,
             color: Colors.yellow,
@@ -48,16 +47,21 @@ class _Day2State extends State<Day2> {
                       textAlign: TextAlign.center,
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                      onChanged: (v) {
-                        str1 = v;
-                        String a = t1.text;
-                        String b = t2.text;
-
-                        int n1 = int.parse(a);
-                        int n2 = int.parse(b);
-
-                        sum = n1 + n2;
-                        print(sum);
+                      onChanged: (value) {
+                        if (value == '') {
+                          a = 0;
+                          if (t2.text != '') {
+                            b = int.parse(t2.text);
+                          }
+                        } else if (t2.text == '') {
+                          b = 0;
+                          a = int.parse(value);
+                        } else {
+                          a = int.parse(value);
+                          b = int.parse(t2.text);
+                          sum = a + b;
+                        }
+                        sum = a + b;
                         setState(() {});
                       }),
                 ),
@@ -75,31 +79,32 @@ class _Day2State extends State<Day2> {
                             borderRadius: BorderRadius.circular(5))),
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                    onChanged: (v) {
-                      str2 = v;
+                    onChanged: (value) {
+                      if (value == '') {
+                        b = 0;
+                        if (t1.text != '') {
+                          a = int.parse(t1.text);
+                        }
+                      } else if (t1.text == '') {
+                        a = 0;
+                        b = int.parse(value);
+                      } else {
+                        a = int.parse(t1.text);
+                        b = int.parse(value);
+                        sum = a + b;
+                      }
 
-                      String a = t1.text;
-                      String b = t2.text;
-
-                      int n1 = int.parse(a);
-                      int n2 = int.parse(b);
-
-                      sum = n1 + n2;
-                      print(sum);
+                      sum = a + b;
                       setState(() {});
                     },
                   ),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    String a = t1.text;
-                    String b = t2.text;
+                    int a = int.parse(t1.text);
+                    int b = int.parse(t2.text);
 
-                    int n1 = int.parse(a);
-                    int n2 = int.parse(b);
-
-                    sum = n1 + n2;
-                    print(sum);
+                    sum = a + b;
 
                     setState(() {});
                   },
@@ -109,11 +114,11 @@ class _Day2State extends State<Day2> {
                   ),
                 ),
                 Text(
-                  "Input 1 = $str1",
+                  "Input 1 = $a",
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  "Input 2 = $str2",
+                  "Input 2 = $b",
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
                 Text(

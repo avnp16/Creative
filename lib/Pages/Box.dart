@@ -93,7 +93,7 @@ class Box extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
