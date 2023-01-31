@@ -14,11 +14,12 @@ class _mytestState extends State<mytest> {
       appBar: AppBar(),
       body: Column(
         children: [
+
           Container(
-            height: 200,
-            width: 200,
-            color: Colors.brown,
-          )
+              height: 200,
+              width: 200,
+              child: Image.asset('Images/women.jpg',scale: 2.5,)),
+
         ],
       ),
     );

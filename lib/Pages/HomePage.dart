@@ -16,8 +16,17 @@ class _MyHomePageState extends State<MyHomePage> {
       Colors.orange,
       Colors.teal,
       Colors.green,
-      Colors.yellow,
-      Colors.red,
+      Colors.blue,
+      Colors.amber,
+      Colors.brown,
+      Colors.deepPurpleAccent,
+      Colors.cyanAccent[100],
+      Colors.pinkAccent[100],
+      Colors.lightGreenAccent,
+      Colors.redAccent,
+
+
+
     ];
 
     var arrPages = [
@@ -28,6 +37,12 @@ class _MyHomePageState extends State<MyHomePage> {
       'mytest',
       'SignUp',
       'SignUp2',
+      'SignUp3',
+      'Ludo_1',
+      'TicTac',
+      'TicTac2',
+      'NumPuz',
+      'heliform3'
     ];
 
     return Scaffold(
@@ -61,6 +76,31 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSpacing: 10,
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(backgroundColor: Colors.amber[200],
+
+          items:  const [
+
+        BottomNavigationBarItem(
+            icon: Icon(Icons.home ),
+            label: 'Home',
+          backgroundColor: Colors.amber
+        ),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Search',
+            backgroundColor: Colors.yellow
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.arrow_back),
+          label: 'Back',
+          backgroundColor: Colors.blue,
+        ),
+
+
+
+      ]
+
+                ),
     );
   }
 }

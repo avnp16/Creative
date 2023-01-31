@@ -28,9 +28,9 @@ class _Signup_1State extends State<Signup_1> {
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(0, 150, 0, 0),
+                margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
                 color: Colors.transparent,
-                child: TextField(
+                child: const TextField(
                   decoration: InputDecoration(
                     labelText: 'Full Name',
                     hintText: 'Enter your Name Here',
@@ -45,7 +45,7 @@ class _Signup_1State extends State<Signup_1> {
               ),
               Container(
                 color: Colors.transparent,
-                child: TextField(
+                child: const TextField(
                   decoration: InputDecoration(
                     labelText: 'User Name',
                     hintText: 'Enter your User Here',
@@ -60,7 +60,7 @@ class _Signup_1State extends State<Signup_1> {
               ),
               Container(
                 color: Colors.transparent,
-                child: TextField(
+                child: const TextField(
                   decoration: InputDecoration(
                     labelText: 'Email',
                     hintText: 'Enter your Email Here',
@@ -75,7 +75,7 @@ class _Signup_1State extends State<Signup_1> {
               ),
               Container(
                 color: Colors.transparent,
-                child: TextField(
+                child: const TextField(
                   decoration: InputDecoration(
                     labelText: 'Password',
                     hintText: 'Enter your Password Here',
@@ -98,7 +98,7 @@ class _Signup_1State extends State<Signup_1> {
                     shape: MaterialStateProperty.all(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(9),
-                        side: BorderSide(
+                        side: const BorderSide(
                             color: Colors.red,
                             width: 3,
                             style: BorderStyle.solid),
@@ -107,12 +107,12 @@ class _Signup_1State extends State<Signup_1> {
                     backgroundColor:
                         MaterialStateProperty.all(Colors.transparent),
                   ),
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.account_box,
                     color: Colors.white,
                   ),
-                  label: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  label: const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Text(
                       "REGISTER",
                       style: TextStyle(

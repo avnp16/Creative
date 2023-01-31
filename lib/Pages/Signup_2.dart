@@ -13,7 +13,7 @@ class _Signup_2State extends State<Signup_2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Signup Page"),
+        title: Text("Login Page"),
         backgroundColor: Colors.grey[300],
         elevation: 0,
       ),
@@ -31,7 +31,7 @@ class _Signup_2State extends State<Signup_2> {
                     fontSize: 52,
                   )),
               SizedBox(
-                height: 75,
+                height: 55,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -68,6 +68,7 @@ class _Signup_2State extends State<Signup_2> {
                   child: const TextField(
                     obscureText: true,
                     decoration: InputDecoration(
+                      border: InputBorder.none,
                       labelText: 'Password',
                       hintText: 'Enter your Password Here',
                       labelStyle: TextStyle(
