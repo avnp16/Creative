@@ -1,3 +1,4 @@
+import 'package:Creative/Pages/Register.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -24,6 +25,10 @@ class _MyHomePageState extends State<MyHomePage> {
       Colors.pinkAccent[100],
       Colors.lightGreenAccent,
       Colors.redAccent,
+      Colors.yellow,
+      Colors.red,
+      Colors.orange,
+      Colors.teal,
 
 
 
@@ -38,11 +43,14 @@ class _MyHomePageState extends State<MyHomePage> {
       'SignUp',
       'SignUp2',
       'SignUp3',
+      'MyLogin',
+      'MyRegistration',
       'Ludo_1',
       'TicTac',
       'TicTac2',
       'NumPuz',
-      'heliform3'
+      'heliform3',
+      'Calling',
     ];
 
     return Scaffold(
@@ -78,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(backgroundColor: Colors.amber[200],
 
-          items:  const [
+          items:   [
 
         BottomNavigationBarItem(
             icon: Icon(Icons.home ),

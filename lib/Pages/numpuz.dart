@@ -8,13 +8,13 @@ class numpuz extends StatefulWidget {
 }
 
 class _numpuzState extends State<numpuz> {
-  String b1 = '3';
-  String b2 = '1';
-  String b3 = '2';
+  String b1 = '1';
+  String b2 = '2';
+  String b3 = '3';
   String b4 = '4';
-  String b5 = '9';
+  String b5 = '5';
   String b6 = '6';
-  String b7 = '5';
+  String b7 = '7';
   String b8 = '8';
   String b9 = '';
   String temp = '';
