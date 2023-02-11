@@ -1,4 +1,4 @@
-import 'package:Creative/Pages/HomePage.dart';
+import 'package:Creative/HomePage.dart';
 import 'package:Creative/Pages/Ludo_1.dart';
 import 'package:Creative/Pages/Marksheet.dart';
 import 'package:Creative/Pages/Mylogin.dart';
@@ -12,6 +12,7 @@ import 'package:Creative/Pages/bmi.dart';
 import 'package:Creative/Pages/calling.dart';
 import 'package:Creative/Pages/heliform3.dart';
 import 'package:Creative/Pages/numpuz.dart';
+import 'package:Creative/ShayariApp/Category.dart';
 import 'package:Creative/Pages/test.dart';
 import 'package:flutter/material.dart';
 import 'Pages/Sum.dart';
@@ -47,6 +48,7 @@ class myapp extends StatelessWidget {
         'NumPuz': (context) => numpuz(),
         'heliform3':(context) => Form3(),
         'Calling':(context) => Calling(),
+        'Shayari' :(context) => Shayari(),
       },
       home: MyHomePage(),
     );

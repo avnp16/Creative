@@ -1,4 +1,3 @@
-import 'package:Creative/Pages/Register.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -35,6 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
 
     var arrPages = [
+      'Shayari',
+
       'Box',
       'Sum',
       'Marksheet',
