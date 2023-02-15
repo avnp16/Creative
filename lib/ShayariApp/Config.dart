@@ -1,4 +1,34 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+
+
 class Config {
+  static List myFont=[
+
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+
+  ];
+
+  static List<Color> arrColor = [
+    Color(0xffd183c9),
+    Color(0xffffb6b9),
+    Color(0xff5c4f74),
+    Color(0xffbbded6),
+    Color(0xffff502f),
+    Color(0xff004d61),
+    Color(0xfff29c2b),
+    Color(0xfff6d04d),
+    Color(0xff8bc24c),
+
+
+
+  ];
+
   static List<String> emoji = [
     '😀💙🍒  😂 🤣 🥲',
     '🌱 🌿 ☘️ 🍀 🎍 🪴 ',

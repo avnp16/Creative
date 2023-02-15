@@ -1,4 +1,5 @@
 import 'package:Creative/HomePage.dart';
+import 'package:Creative/IPL/teamlist.dart';
 import 'package:Creative/Pages/Ludo_1.dart';
 import 'package:Creative/Pages/Marksheet.dart';
 import 'package:Creative/Pages/Mylogin.dart';
@@ -10,13 +11,12 @@ import 'package:Creative/Pages/TicTac.dart';
 import 'package:Creative/Pages/TicTac2.dart';
 import 'package:Creative/Pages/bmi.dart';
 import 'package:Creative/Pages/calling.dart';
-import 'package:Creative/Pages/heliform3.dart';
+import 'package:Creative/Pages/colordemo.dart';
 import 'package:Creative/Pages/numpuz.dart';
 import 'package:Creative/ShayariApp/Category.dart';
 import 'package:Creative/Pages/test.dart';
 import 'package:flutter/material.dart';
 import 'Pages/Sum.dart';
-import 'Pages/Box.dart';
 
 void main() {
   runApp(myapp());
@@ -32,7 +32,6 @@ class myapp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.grey),
       initialRoute: 'home',
       routes: {
-        'Box': (context) => Box(),
         'Sum': (context) => Day2(),
         'Marksheet': (context) => Mymarksheet(),
         'BMI': (context) => MyBmi(),
@@ -46,9 +45,10 @@ class myapp extends StatelessWidget {
         'TicTac': (context) => Tictac(),
         'TicTac2': (context) => TicTac2(),
         'NumPuz': (context) => numpuz(),
-        'heliform3':(context) => Form3(),
         'Calling':(context) => Calling(),
         'Shayari' :(context) => Shayari(),
+        'ColorDemo':(context) => DemoColor(),
+        'IPL':(context) => IplTeam(),
       },
       home: MyHomePage(),
     );

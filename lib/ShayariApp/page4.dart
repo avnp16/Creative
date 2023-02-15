@@ -1,9 +1,10 @@
+import 'package:Creative/ShayariApp/Config.dart';
 import 'package:flutter/material.dart';
 
 class page4 extends StatefulWidget {
-  String last;
+  String last,title;
 
-  page4(this.last);
+  page4(this.last,this.title);
 
   @override
   State<page4> createState() => _page4State();
@@ -14,7 +15,7 @@ class _page4State extends State<page4> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Page 4'),
+        title: Text('${widget.title}'),
       ),
       body: Column(
         children: [
@@ -76,7 +77,25 @@ class _page4State extends State<page4> {
                       height: 30,
                       color: Colors.red,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            showModalBottomSheet(context: context, builder: (context) {
+                              return Container(
+                                height: 150,
+                                child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 8
+                                ), itemBuilder: (context, index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      color: Config.arrColor[index],
+                                    ),
+                                  );
+
+                                },itemCount: Config.arrColor.length),
+                              );
+                            },);
+
+                          },
                           style: const ButtonStyle(
                               backgroundColor:
                                   MaterialStatePropertyAll(Colors.red)),
@@ -90,7 +109,25 @@ class _page4State extends State<page4> {
                       height: 30,
                       color: Colors.red,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            showModalBottomSheet(context: context, builder: (context) {
+                              return Container(
+                                height: 150,
+                                child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 8
+                                ), itemBuilder: (context, index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      color: Config.arrColor[index],
+                                    ),
+                                  );
+
+                                },itemCount: Config.arrColor.length),
+                              );
+                            },);
+
+                          },
                           style: const ButtonStyle(
                               backgroundColor:
                                   MaterialStatePropertyAll(Colors.red)),
@@ -104,7 +141,8 @@ class _page4State extends State<page4> {
                       height: 30,
                       color: Colors.red,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                          },
                           style: const ButtonStyle(
                               backgroundColor:
                                   MaterialStatePropertyAll(Colors.red)),
@@ -122,7 +160,25 @@ class _page4State extends State<page4> {
                       width: 120,
                       height: 30,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            showModalBottomSheet(context: context, builder: (context) {
+                              return Container(
+                                height: 150,
+                                child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 8
+                                ), itemBuilder: (context, index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      child: Text('${Config.myFont[index]}'),
+                                    ),
+                                  );
+
+                                },itemCount: Config.myFont.length),
+                              );
+                            },);
+
+                          },
                           style: const ButtonStyle(
                               backgroundColor:
                                   MaterialStatePropertyAll(Colors.red)),
@@ -135,7 +191,15 @@ class _page4State extends State<page4> {
                       width: 120,
                       height: 30,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            showModalBottomSheet(context: context, builder: (context) {
+                              return Container(height: 150,
+                              child: ListView.builder(itemBuilder: (context, index) {
+                                return ListTile(title: Text('${Config.emoji[index]}'),);
+                              },itemCount: Config.emoji.length),
+                              );
+                            },);
+                          },
                           style: const ButtonStyle(
                               backgroundColor:
                                   MaterialStatePropertyAll(Colors.red)),

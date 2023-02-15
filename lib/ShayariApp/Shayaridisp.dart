@@ -1,5 +1,7 @@
 import 'package:Creative/ShayariApp/page4.dart';
+import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ShayariDisp extends StatefulWidget {
   int pos;
@@ -60,12 +62,12 @@ class _ShayariDispState extends State<ShayariDisp> {
 
                   },child: Image.asset('Images/shayari/expand.png')),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
                 Text('${widget.pos + 1}/${widget.shayarilist.length}',
                     style: TextStyle(fontSize: 20)),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
                 Padding(
@@ -105,7 +107,14 @@ class _ShayariDispState extends State<ShayariDisp> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.copy)),
+                IconButton(onPressed: () {
+                  FlutterClipboard.copy('${one}').then((value) {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Copied')));
+                    
+                  });
+                  
+                  
+                }, icon: Icon(Icons.copy)),
                 IconButton(
                     onPressed: () {
                       if (widget.pos > 0) {
@@ -121,7 +130,7 @@ class _ShayariDispState extends State<ShayariDisp> {
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
-                            return page4(one);
+                            return page4(one,widget.title);
                           },
                         ));
                       },
@@ -129,6 +138,8 @@ class _ShayariDispState extends State<ShayariDisp> {
                 ),
                 IconButton(
                     onPressed: () {
+
+
                       setState(() {
                         if (widget.pos < widget.shayarilist.length - 1) {
                           widget.pos++;
@@ -136,7 +147,11 @@ class _ShayariDispState extends State<ShayariDisp> {
                       });
                     },
                     icon: Icon(Icons.arrow_forward_ios)),
-                IconButton(onPressed: () {}, icon: Icon(Icons.share)),
+                IconButton(onPressed: () {
+                  Share.share('${one}');
+
+
+                }, icon: Icon(Icons.share)),
               ],
             ),
           )

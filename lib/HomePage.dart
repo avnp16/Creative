@@ -28,15 +28,12 @@ class _MyHomePageState extends State<MyHomePage> {
       Colors.red,
       Colors.orange,
       Colors.teal,
-
-
-
     ];
 
     var arrPages = [
+      'IPL',
       'Shayari',
-
-      'Box',
+      'ColorDemo',
       'Sum',
       'Marksheet',
       'BMI',
@@ -50,7 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
       'TicTac',
       'TicTac2',
       'NumPuz',
-      'heliform3',
       'Calling',
     ];
 
@@ -85,31 +81,22 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSpacing: 10,
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(backgroundColor: Colors.amber[200],
-
-          items:   [
-
+      bottomNavigationBar:
+          BottomNavigationBar(backgroundColor: Colors.amber[200], items: [
         BottomNavigationBarItem(
-            icon: Icon(Icons.home ),
+            icon: Icon(Icons.home),
             label: 'Home',
-          backgroundColor: Colors.amber
-        ),
+            backgroundColor: Colors.amber),
         BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Search',
-            backgroundColor: Colors.yellow
-        ),
+            backgroundColor: Colors.yellow),
         BottomNavigationBarItem(
           icon: Icon(Icons.arrow_back),
           label: 'Back',
           backgroundColor: Colors.blue,
         ),
-
-
-
-      ]
-
-                ),
+      ]),
     );
   }
 }
