@@ -24,7 +24,7 @@ class _IplTeamState extends State<IplTeam> {
           return ListTile(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return PlayerList(index);
+                return PlayerList(index); // Value Passing
               },));
             },
             leading: CircleAvatar(

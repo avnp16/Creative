@@ -8,6 +8,8 @@ class Signup_3 extends StatefulWidget {
 }
 
 class _Signup_3State extends State<Signup_3> {
+
+  String gv='';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,6 +97,13 @@ class _Signup_3State extends State<Signup_3> {
                                 SizedBox(
                                   width: 10,
                                 ),
+                                Radio(activeColor: Colors.pink,value: "Male", groupValue: gv, onChanged: (value) {
+                                  setState(() {
+                                    gv=value!;
+
+                                  });
+                                },),
+
                                 Text('Male',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
@@ -114,6 +123,13 @@ class _Signup_3State extends State<Signup_3> {
                                 SizedBox(
                                   width: 10,
                                 ),
+
+                                Radio(activeColor: Colors.pink,value: "Female", groupValue: gv, onChanged: (value) {
+                                  setState(() {
+                                    gv=value!;
+
+                                  });
+                                },),
                                 Text('Female',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,

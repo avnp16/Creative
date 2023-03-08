@@ -3,8 +3,8 @@ import 'package:Creative/IPL/playerdetails.dart';
 import 'package:flutter/material.dart';
 
 class PlayerList extends StatefulWidget {
-int pos;
-PlayerList(this.pos);
+int pos;  // value receiving
+PlayerList(this.pos);  // value receiving
   @override
   State<PlayerList> createState() => _PlayerListState();
 }
@@ -15,13 +15,6 @@ class _PlayerListState extends State<PlayerList> {
  List<String> plCatlist =[];
  List<String> teamlogolist =[];
 
-
-
-
-
-
-
-
   @override
 
   void initState() {
@@ -31,8 +24,6 @@ class _PlayerListState extends State<PlayerList> {
       plphotolist=ipldata.csk_photo;
       plCatlist=ipldata.csk_cat;
       teamlogolist=ipldata.team_logo;
-
-
     }
 
     if(widget.pos==1) {

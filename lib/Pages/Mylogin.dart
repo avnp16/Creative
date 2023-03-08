@@ -12,7 +12,7 @@ class _MyLoginState extends State<MyLogin> {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-          image: DecorationImage(image: AssetImage('Images/login.png'))),
+          image: DecorationImage(image: AssetImage('Images/etc/login.png'))),
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,

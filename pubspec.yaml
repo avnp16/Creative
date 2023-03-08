@@ -33,12 +33,17 @@ dependencies:
     sdk: flutter
 
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   google_fonts:
   clipboard:
   share_plus:
+  widgets_to_image:
+  external_path:
+  permission_handler: ^10.2.0
+  path_provider:
+  shared_preferences: ^2.0.18
+
+
 
 
 dev_dependencies:
@@ -66,18 +71,40 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - Images/
+    - Images/iplassets/
+    - Images/shayari/
+    - Images/img_puzzle/
+    - Images/etc/
 
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware
 
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
 
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
+
+  fonts:
+    - family: f1
+      fonts:
+        - asset: fonts/Babylonica-Regular.ttf
+
+    - family: f2
+      fonts:
+        - asset: fonts/AmericanTypewriter.ttc
+
+    - family: f3
+      fonts:
+        - asset: fonts/Arial Black.ttf
+
+    - family: f4
+      fonts:
+        - asset: fonts/Goodnight-London-Sans.ttf
+
+    - family: f4
+      fonts:
+        - asset: fonts/Coffee Mood.otf
+
+    - family: f5
+      fonts:
+        - asset: fonts/chalk.ttf
+
+
   # fonts:
   #   - family: Schyler
   #     fonts:

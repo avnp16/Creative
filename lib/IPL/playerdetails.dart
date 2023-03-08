@@ -65,7 +65,7 @@ class _PlayerDetailsState extends State<PlayerDetails> {
                 ],
               ),
 
-            ),
+            ), 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

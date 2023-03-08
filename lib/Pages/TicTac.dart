@@ -16,7 +16,7 @@ class _TictacState extends State<Tictac> {
   int xCount = 0;
   String w = '';
 
-  String lastvalue = "X";
+  String lastWin = "X";
 
   win() {
     if (displayElement[0] == "X" &&
@@ -89,11 +89,11 @@ class _TictacState extends State<Tictac> {
     ;
 
     if (w == "X") {
-      lastvalue = "X";
+      lastWin = "X";
     }
 
     if (w == "O") {
-      lastvalue = "O";
+      lastWin = "O";
     }
   }
 
@@ -125,7 +125,7 @@ class _TictacState extends State<Tictac> {
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
             // Text('Count: X=$xCount & O=$oCount',
             //     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-            Text('Its Your Turn : $lastvalue',
+            Text('Its Your Turn : $lastWin',
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
             w == ""
                 ? Text('No one win',
@@ -265,16 +265,16 @@ class _TictacState extends State<Tictac> {
                     onPressed: () {
                       if (displayElement[index] == '' && w == '') {
                         setState(() {
-                          displayElement[index] = lastvalue;
-                          if (lastvalue == 'X') {
+                          displayElement[index] = lastWin;
+                          if (lastWin == 'X') {
                             xCount++;
                           } else
                             oCount++;
 
-                          if (lastvalue == 'X') {
-                            lastvalue = 'O';
+                          if (lastWin == 'X') {
+                            lastWin = 'O';
                           } else
-                            lastvalue = 'X';
+                            lastWin = 'X';
 
                           win();
                         });

@@ -2,16 +2,28 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-
 class Config {
-  static List myFont=[
 
+  static List<List<Color>> gradient =[
+
+    [Color(0xffff9a9e),Color(0xfffad0c4)],
+    [Color(0xfff6d365),Color(0xfffda085)],
+    [Color(0xfffbc2eb),Color(0xffa6c1ee)],
+    [Color(0xffa8edea),Color(0xfffed6e3)],
+    [Color(0xfffddb92),Color(0xffd1fdff)],
+    [Color(0xffcd9cf2),Color(0xfff6f3ff)],
+
+
+
+  ];
+
+
+  static List myFont = [
     'one',
     'two',
     'three',
     'four',
     'five',
-
   ];
 
   static List<Color> arrColor = [
@@ -24,24 +36,16 @@ class Config {
     Color(0xfff29c2b),
     Color(0xfff6d04d),
     Color(0xff8bc24c),
-
-
-
   ];
 
   static List<String> emoji = [
+    'No Emoji',
     '😀💙🍒  😂 🤣 🥲',
     '🌱 🌿 ☘️ 🍀 🎍 🪴 ',
     '🐻 🐼 🐻‍️ 🐨 🐯 🦁',
-    '😀💙🍒  😂 🤣 🥲',
-    '🌱 🌿 ☘️ 🍀 🎍 🪴 ',
-    '🐻 🐼 🐻‍️ 🐨 🐯 🦁',
-    '😀💙🍒  😂 🤣 🥲',
-    '🌱 🌿 ☘️ 🍀 🎍 🪴 ',
-    '🐻 🐼 🐻‍️ 🐨 🐯 🦁',
-    '😀💙🍒  😂 🤣 🥲',
-    '🌱 🌿 ☘️ 🍀 🎍 🪴 ',
-    '🐻 🐼 🐻‍️ 🐨 🐯 🦁',
+
+
+
   ];
 
   static List<String> shayariCategory = [

@@ -18,7 +18,7 @@ class _mytestState extends State<mytest> {
           Container(
               height: 200,
               width: 200,
-              child: Image.asset('Images/women.jpg',scale: 2.5,)),
+              child: Image.asset('Images/etc/women.jpg',scale: 2.5,)),
 
         ],
       ),

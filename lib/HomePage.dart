@@ -28,9 +28,17 @@ class _MyHomePageState extends State<MyHomePage> {
       Colors.red,
       Colors.orange,
       Colors.teal,
+      Colors.brown,
+      Colors.blue,
+      Colors.amber,
+      Colors.brown,
+
     ];
 
     var arrPages = [
+      "SharedPref",
+      "MathPuz",
+      'Zomato',
       'IPL',
       'Shayari',
       'ColorDemo',

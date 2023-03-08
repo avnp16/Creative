@@ -70,7 +70,7 @@ class _ShayarilistState extends State<Shayarilist> {
       body: ListView.separated(
           itemBuilder: (context, index) {
             int max = Config.emoji.length;
-            int min = 0;
+            int min = 1;
             number = Random().nextInt(max - min) + min;
 
             return Padding(
