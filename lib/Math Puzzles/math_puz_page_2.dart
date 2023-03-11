@@ -1,4 +1,5 @@
 import 'package:Creative/Math%20Puzzles/math_config.dart';
+import 'package:Creative/Math%20Puzzles/math_puz_page_1.dart';
 import 'package:Creative/Math%20Puzzles/math_puz_page_3.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,6 +25,12 @@ class _MathPuz2State extends State<MathPuz2> {
   setValue() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setInt('counter', level);
+  }
+
+  //& Read data
+  getValue() async {
+    final prefs = await SharedPreferences.getInstance();
+    counter = prefs.getInt('counter') ?? 5;
   }
 
   setwon() async {
@@ -52,17 +59,13 @@ class _MathPuz2State extends State<MathPuz2> {
 
   getskip() async {
     final prefs = await SharedPreferences.getInstance();
-    skip = prefs.getStringList('key2') ?? ["88"];
+    skip = prefs.getStringList('key2') ?? [""];
     print("this is skip$skip");
 
     setState(() {});
   }
 
-  //& Read data
-  getValue() async {
-    final prefs = await SharedPreferences.getInstance();
-    counter = prefs.getInt('counter') ?? 5;
-  }
+
 
   @override
   void initState() {
@@ -102,7 +105,6 @@ class _MathPuz2State extends State<MathPuz2> {
                     InkWell(
                       onTap: () {
                         if (won.contains("${level}")) {
-
                         } else {
                           setskip();
                           getskip();
@@ -121,7 +123,7 @@ class _MathPuz2State extends State<MathPuz2> {
                       alignment: Alignment.center,
                       width: width * .60,
                       height: bodyheight * 0.06,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage(
                                   'Images/img_puzzle/level_board.png'),
@@ -129,7 +131,7 @@ class _MathPuz2State extends State<MathPuz2> {
                       child: Text(
                         'Puzzle ${level + 1}',
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
                             fontFamily: "f5"),
@@ -165,7 +167,7 @@ class _MathPuz2State extends State<MathPuz2> {
                           height: height * 0.05,
                           decoration: BoxDecoration(color: Colors.white),
                           child: Text("${str}",
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 25, fontWeight: FontWeight.bold)),
                           // color: Colors.white,
                         ),
@@ -184,7 +186,8 @@ class _MathPuz2State extends State<MathPuz2> {
                                 getwon();
                                 getValue();
 
-                                Navigator.push(context, MaterialPageRoute(
+                                Navigator.pushReplacement(context,
+                                    MaterialPageRoute(
                                   builder: (context) {
                                     return MathPuz3(level);
                                   },
@@ -205,7 +208,7 @@ class _MathPuz2State extends State<MathPuz2> {
                           child: GridView.builder(
                             itemCount: 10,
                             gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
+                                const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 10),
                             itemBuilder: (context, index) {
                               return Padding(
@@ -239,16 +242,30 @@ class _MathPuz2State extends State<MathPuz2> {
                   ],
                 ),
               ),
-              ElevatedButton(
-                  onPressed: () async {
-                    final prefs = await SharedPreferences.getInstance();
-                    final success = await prefs.remove('counter');
-                    final success1 = await prefs.remove('key');
-                    final success2 = await prefs.remove('key2');
-                    print("Removed");
-                    setState(() {});
-                  },
-                  child: Text("Remove")),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                      onPressed: () async {
+                        final prefs = await SharedPreferences.getInstance();
+                        final success = await prefs.remove('counter');
+                        final success1 = await prefs.remove('key');
+                        final success2 = await prefs.remove('key2');
+                        print("Clear Data");
+                        setState(() {});
+                      },
+                      child: Text("Clear Data")),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MathPuz1(),
+                            ));
+                      },
+                      child: Text("Back to Dashboard"))
+                ],
+              ),
             ],
           )),
     );

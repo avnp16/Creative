@@ -26,7 +26,7 @@ class _MathPuz4State extends State<MathPuz4> {
 
   getskip() async {
     final prefs = await SharedPreferences.getInstance();
-    skip = prefs.getStringList('key2') ?? [""];
+    skip = prefs.getStringList('key2') ?? ["0"];
     print("this is skip$skip");
 
     setState(() {});
@@ -34,7 +34,6 @@ class _MathPuz4State extends State<MathPuz4> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getwon();
     getskip();
@@ -65,7 +64,7 @@ class _MathPuz4State extends State<MathPuz4> {
         ),
         body: Column(
           children: [
-            Text(
+            const Text(
               'Select Puzzle',
               style:
                   TextStyle(fontSize: 35, color: Colors.blue, fontFamily: "f5"),
@@ -73,18 +72,17 @@ class _MathPuz4State extends State<MathPuz4> {
             Expanded(
               child: GridView.builder(
                 itemCount: 30,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4),
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
-                      // if (Mathconfig.won.contains(index.toString()) ||
                       if (won.contains(index.toString()) ||
                           skip.contains(index.toString())) {
                         setState(() {
                           level = index;
 
-                          Navigator.push(context, MaterialPageRoute(
+                          Navigator.pushReplacement(context, MaterialPageRoute(
                             builder: (context) {
                               return MathPuz2(level);
                             },
@@ -116,7 +114,7 @@ class _MathPuz4State extends State<MathPuz4> {
                                       skip.contains(index.toString())
                                   ? "${index + 1}"
                                   : "",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontFamily: "f5",
                                 fontSize: 50,
                               ),
