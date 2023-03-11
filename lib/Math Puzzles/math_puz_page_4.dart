@@ -10,16 +10,16 @@ class MathPuz4 extends StatefulWidget {
 
 class _MathPuz4State extends State<MathPuz4> {
   int level = 0;
-  List<String> won = [];
+  List<String> win = [];
   List<String> skip = [];
 
   // bool isComp = false;
 
   //& Read data
-  getwon() async {
+  getwin() async {
     final prefs = await SharedPreferences.getInstance();
-    won = prefs.getStringList('key') ?? [""];
-    print("this is win $won");
+    win = prefs.getStringList('key') ?? [""];
+    print("this is win $win");
 
     setState(() {});
   }
@@ -32,11 +32,23 @@ class _MathPuz4State extends State<MathPuz4> {
     setState(() {});
   }
 
+  //& Read data
+  getLastLevel() async {
+    final prefs = await SharedPreferences.getInstance();
+    level = prefs.getInt('counter') ?? -1;
+    level = level + 1;
+    setState(() {});
+  }
+
+
+
   @override
   void initState() {
     super.initState();
-    getwon();
+    getwin();
     getskip();
+    getLastLevel();
+
   }
 
   @override
@@ -77,7 +89,7 @@ class _MathPuz4State extends State<MathPuz4> {
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
-                      if (won.contains(index.toString()) ||
+                      if (win.contains(index.toString()) ||
                           skip.contains(index.toString())) {
                         setState(() {
                           level = index;
@@ -97,12 +109,12 @@ class _MathPuz4State extends State<MathPuz4> {
                       decoration: BoxDecoration(
                           color: Colors.transparent,
                           borderRadius: BorderRadius.circular(8),
-                          border: (won.contains(index.toString())) ||
+                          border: (win.contains(index.toString())) ||
                                   (skip.contains(index.toString()))
                               ? Border.all()
                               : null,
                           image: DecorationImage(
-                              image: AssetImage((won.contains(index.toString()))
+                              image: AssetImage((win.contains(index.toString()))
                                   ? "Images/img_puzzle/tick.png"
                                   : skip.contains(index.toString())
                                       ? "Images/img_puzzle/background.jpg"
@@ -110,7 +122,7 @@ class _MathPuz4State extends State<MathPuz4> {
                       child: Align(
                           alignment: Alignment.center,
                           child: Text(
-                              won.contains(index.toString()) ||
+                              win.contains(index.toString()) ||
                                       skip.contains(index.toString())
                                   ? "${index + 1}"
                                   : "",

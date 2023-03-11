@@ -13,7 +13,7 @@ class _MathPuz1State extends State<MathPuz1> {
   int level = 0;
 
   //& Read data
-  getValue() async {
+  getLastLevel() async {
     final prefs = await SharedPreferences.getInstance();
     level = prefs.getInt('counter') ?? -1;
     level = level + 1;
@@ -23,7 +23,7 @@ class _MathPuz1State extends State<MathPuz1> {
   @override
   void initState() {
     super.initState();
-    getValue();
+    getLastLevel();
   }
 
   @override

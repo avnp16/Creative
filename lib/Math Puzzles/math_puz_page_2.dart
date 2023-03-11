@@ -18,33 +18,36 @@ class _MathPuz2State extends State<MathPuz2> {
   String str = '';
   int level = 0;
   int counter = 0;
-  List<String> won = [];
+  List<String> win = [];
   List<String> skip = [];
 
   //& Write data
-  setValue() async {
+  setLastLevel() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setInt('counter', level);
   }
 
   //& Read data
-  getValue() async {
+  getLastLevel() async {
     final prefs = await SharedPreferences.getInstance();
-    counter = prefs.getInt('counter') ?? 5;
+    counter = prefs.getInt('counter') ?? 0;
+  }
+  //& Write data
+
+  setwin() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    win = prefs.getStringList("key") ?? [''];
+    win.add(level.toString());
+    await prefs.setStringList("key", win);
   }
 
-  setwon() async {
-    final prefs = await SharedPreferences.getInstance();
+  //& Read data
 
-    won = prefs.getStringList("key") ?? [''];
-    won.add(level.toString());
-    await prefs.setStringList("key", won);
-  }
-
-  getwon() async {
+  getwin() async {
     final prefs = await SharedPreferences.getInstance();
-    won = prefs.getStringList('key') ?? ["88"];
-    print("this is win $won");
+    win = prefs.getStringList('key') ?? [""];
+    print("this is win $win");
 
     setState(() {});
   }
@@ -72,8 +75,8 @@ class _MathPuz2State extends State<MathPuz2> {
     // TODO: implement initState
     super.initState();
     level = widget.level;
-    getValue();
-    getwon();
+    getLastLevel();
+    getwin();
     getskip();
   }
 
@@ -104,7 +107,7 @@ class _MathPuz2State extends State<MathPuz2> {
                   children: [
                     InkWell(
                       onTap: () {
-                        if (won.contains("${level}")) {
+                        if (win.contains("${level}")) {
                         } else {
                           setskip();
                           getskip();
@@ -181,10 +184,10 @@ class _MathPuz2State extends State<MathPuz2> {
                         TextButton(
                             onPressed: () {
                               if (str == Mathconfig.anslist[level]) {
-                                setValue();
-                                setwon();
-                                getwon();
-                                getValue();
+                                setLastLevel();
+                                setwin();
+                                getwin();
+                                getLastLevel();
 
                                 Navigator.pushReplacement(context,
                                     MaterialPageRoute(
