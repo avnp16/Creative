@@ -32,6 +32,7 @@ class _MathPuz2State extends State<MathPuz2> {
     final prefs = await SharedPreferences.getInstance();
     counter = prefs.getInt('counter') ?? 0;
   }
+
   //& Write data
 
   setwin() async {
@@ -40,6 +41,10 @@ class _MathPuz2State extends State<MathPuz2> {
     win = prefs.getStringList("key") ?? [''];
     win.add(level.toString());
     await prefs.setStringList("key", win);
+
+    skip = prefs.getStringList("key2") ?? [''];
+    skip.add((level + 1).toString());
+    await prefs.setStringList("key2", skip);
   }
 
   //& Read data
@@ -47,6 +52,7 @@ class _MathPuz2State extends State<MathPuz2> {
   getwin() async {
     final prefs = await SharedPreferences.getInstance();
     win = prefs.getStringList('key') ?? [""];
+
     print("this is win $win");
 
     setState(() {});
@@ -67,8 +73,6 @@ class _MathPuz2State extends State<MathPuz2> {
 
     setState(() {});
   }
-
-
 
   @override
   void initState() {
